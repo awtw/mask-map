@@ -1,6 +1,29 @@
+<div class="container">
+	<h3 class="title2">區域搜尋</h3>
+	<mat-form-field>
+		<mat-label>選擇區域</mat-label>
+		<mat-select [(value)]="selected">
+			<mat-option *ngFor="let local of location" [value]="local.value">
+				{{local.viewValue}}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+	<button mat-stroked-button color="primary" (click)="search()">搜尋</button>
+	<br>
+	<h3 class="title2">經緯度搜尋</h3>
+	<mat-form-field class="example-form-field">
+		<mat-label>經度</mat-label>
+		<input matInput type="text" placeholder="25.0174719" [(ngModel)]="searchPlace">
+	</mat-form-field>
+	<mat-form-field class="example-form-field">
+		<mat-label>緯度</mat-label>
+		<input matInput type="text" placeholder="121.3662934" [(ngModel)]="searchPlace2">
+	</mat-form-field>
+	<button mat-stroked-button color="primary" (click)="searchPlaceMethod()">搜尋</button>
+</div>
+
 <div class="map-container">
 	<div class="map-frame">
-		<div class="map" leaflet 
-     [leafletOptions]="options"></div>
+		<div id="map"></div>
 	</div>
 </div>

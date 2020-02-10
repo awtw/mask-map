@@ -12,9 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [ AppComponent, MapComponent, SearchComponent ],
@@ -26,8 +24,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 		MatSelectModule,
 		MaterialModule,
 		HttpClientModule,
-		LeafletModule.forRoot(),
-		
+		FormsModule
 	],
 	providers: [ MapService ],
 	bootstrap: [ AppComponent ],
