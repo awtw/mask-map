@@ -41,38 +41,38 @@ export class MapService {
 		});
 
 		//markersCluster
-		var markers = new L.MarkerClusterGroup().addTo(tempMap);
-		this.http.get('https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json').subscribe((x) => {
-			this.data = x;
-			// console.log(this.data.features);
-			for (let i = 0; this.data.features.length > i; i++) {
-				let mask;
-				if (this.data.features[i].properties.mask_adult == 0) mask = redIcon;
-				else mask = greenIcon;
-				markers.addLayer(
-					L.marker(
-						[
-							this.data.features[i].geometry.coordinates[1],
-							this.data.features[i].geometry.coordinates[0]
-						],
-						{
-							icon: mask
-						}
-					).bindPopup(
-						'<h1>' +
-							this.data.features[i].properties.name +
-							'</h1>' +
-							'<p>成人口罩數量' +
-							this.data.features[i].properties.mask_adult +
-							'</p>' +
-							'<p>小孩口罩數量' +
-							this.data.features[i].properties.mask_child +
-							'</p>'
-					)
-				);
-				tempMap.addLayer(markers);
-			}
-		});
+		// var markers = new L.MarkerClusterGroup().addTo(tempMap);
+		// this.http.get('https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json').subscribe((x) => {
+		// 	this.data = x;
+		// 	// console.log(this.data.features);
+		// 	for (let i = 0; this.data.features.length > i; i++) {
+		// 		let mask;
+		// 		if (this.data.features[i].properties.mask_adult == 0) mask = redIcon;
+		// 		else mask = greenIcon;
+		// 		markers.addLayer(
+		// 			L.marker(
+		// 				[
+		// 					this.data.features[i].geometry.coordinates[1],
+		// 					this.data.features[i].geometry.coordinates[0]
+		// 				],
+		// 				{
+		// 					icon: mask
+		// 				}
+		// 			).bindPopup(
+		// 				'<h1>' +
+		// 					this.data.features[i].properties.name +
+		// 					'</h1>' +
+		// 					'<p>成人口罩數量' +
+		// 					this.data.features[i].properties.mask_adult +
+		// 					'</p>' +
+		// 					'<p>小孩口罩數量' +
+		// 					this.data.features[i].properties.mask_child +
+		// 					'</p>'
+		// 			)
+		// 		);
+		// 		tempMap.addLayer(markers);
+		// 	}
+		// });
 		this.map = tempMap;
 	}
 

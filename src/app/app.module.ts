@@ -14,7 +14,7 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
+
 
 @NgModule({
 	declarations: [ AppComponent, MapComponent, SearchComponent ],
@@ -27,7 +27,7 @@ import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluste
 		MaterialModule,
 		HttpClientModule,
 		LeafletModule.forRoot(),
-		LeafletMarkerClusterModule
+		
 	],
 	providers: [ MapService ],
 	bootstrap: [ AppComponent ],
