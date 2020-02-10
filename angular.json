@@ -23,7 +23,7 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": false,
-						"assets": [ "src/favicon.ico", "src/assets" ],
+						"assets": [ "src/assets" ],
 						"styles": [
 							"./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
 							"./node_modules/leaflet/dist/leaflet.css",
@@ -97,7 +97,7 @@
 								"input": "./node_modules/leaflet/dist/images",
 								"output": "leaflet/"
 							},
-							"src/favicon.ico",
+
 							"src/assets"
 						],
 						"styles": [
